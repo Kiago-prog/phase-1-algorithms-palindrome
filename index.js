@@ -1,5 +1,15 @@
 function isPalindrome(word) {
-  // Write your algorithm here
+  // Convert the word to lowercase and remove non-alphabetic characters
+  const cleanedWord = word.toLowerCase().replace(/[^a-z]/g, '');
+
+  // Compare characters from the start and end of the cleaned word
+  for (let i = 0; i < cleanedWord.length / 2; i++) {
+    if (cleanedWord[i] !== cleanedWord[cleanedWord.length - 1 - i]) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 /* 
